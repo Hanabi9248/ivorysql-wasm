@@ -1,4 +1,5 @@
 \echo Use "CREATE EXTENSION ivorysql_ora" to load this file. \quit
+
 /***************************************************************
  *
  * sys.char(n char) type support
@@ -10763,6 +10764,7 @@ AS IMPLICIT;
 CREATE CAST (text AS text)
 WITH FUNCTION sys.orachar_to_long_with_typmod(text, integer, boolean)
 AS IMPLICIT;
+
 /***************************************************************
  *
  * Character datatype functions.
@@ -12149,6 +12151,7 @@ BEGIN
 END;
 $$ LANGUAGE plisql SECURITY INVOKER;
 /* End - SYS_CONTEXT */
+
 /* 
  * function which converts all-uppercase text to all-lowercase text
  * and vice versa. 
@@ -13342,6 +13345,7 @@ WHERE
     C.RELKIND = 'v'
   AND PG_GET_USERBYID(C.RELOWNER) = CURRENT_USER;
 GRANT SELECT ON SYS.USER_VIEWS TO PUBLIC;
+
 
 -- XMLTYPE forward declaration
 CREATE TYPE sys.XMLTYPE;
